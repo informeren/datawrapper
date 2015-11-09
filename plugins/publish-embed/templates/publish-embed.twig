@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <p class="lead" style="margin:0">{% trans "Embed chart" %}</p>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="span1" style="text-align:center">
+            <i class="big fa fa-code"></i>
+        </div>
+        <div class="loading">
+            {% trans "Generating embed code, please stand by..." %}
+        </div>
+        <div class="error hidden">
+            {% trans "Unable to publish diagram. Please try again." %}
+        </div>
+        <div class="span4 codes" style="display:none;">
+            <div class="span4">
+                <p>{% trans "Copy the embed code you need:" %}</p>
+                <label>{% trans "Textile" %}</label>
+                <textarea id="textileArea" class="span4" readonly></textarea>
+            </div>
+            <div class="span4">
+                <label>{% trans "HTML" %}</label>
+                <textarea id="htmlArea" class="span4" readonly></textarea>
+            </div>
+            <div class="span4">
+                <label>{% trans "URL" %}</label>
+                <textarea id="urlArea" class="span4" readonly></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">{% trans "OK" %}</button>
+</div>
