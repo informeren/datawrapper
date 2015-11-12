@@ -22,7 +22,7 @@ require(['dw/chart/publish'], function () {
     var showModal = function () {
       var chart = dw.backend.currentChart,
           chart_id = chart.get('id'),
-          chart_url = 'http://' + dw.backend.__chartCacheDomain + '/' + chart_id + '/',
+          chart_url = 'https://' + dw.backend.__chartCacheDomain + '/' + chart_id + '/',
           w = chart.get('metadata.publish.embed-width'),
           h = chart.get('metadata.publish.embed-height'),
           titleChart = chart.get('title');
