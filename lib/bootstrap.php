@@ -45,8 +45,16 @@ function secure_password($pwd) {
 }
 
 function get_current_protocol() {
-    $ssl = isset($_SERVER['HTTPS']) ? $_SERVER['HTTPS'] : null;
-    $ssl = $ssl == 1 || strtolower($ssl) === 'on';
+    $ssl = false;
+
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+      $ssl = true;
+    }
+
+    $proto = 'HTTP_X_FORWARDED_FOR';
+    if (isset($_SERVER[$proto]) && $_SERVER[$proto] == 'https') {
+      $ssl = true;
+    }
 
     return $ssl ? 'https' : 'http';
 }
