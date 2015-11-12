@@ -51,7 +51,7 @@ function get_current_protocol() {
       $ssl = true;
     }
 
-    $proto = 'HTTP_X_FORWARDED_FOR';
+    $proto = 'HTTP_X_FORWARDED_PROTO';
     if (isset($_SERVER[$proto]) && $_SERVER[$proto] == 'https') {
       $ssl = true;
     }
